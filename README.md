@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vignesh R Krishnan — Technical Product Manager Portfolio
+
+A world-class portfolio website built to communicate product thinking, decision making, customer obsession, business impact, and technical depth.
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **Animations:** Framer Motion
+- **Deployment:** GitHub Pages (static export)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── page.tsx                           # Homepage
+│   ├── layout.tsx                         # Root layout (navbar, footer, theme)
+│   ├── not-found.tsx                      # 404 page
+│   ├── about/                             # About page
+│   ├── contact/                           # Contact page
+│   ├── writing/                           # Writing / knowledge base
+│   └── case-studies/
+│       ├── page.tsx                        # Case study index
+│       ├── biometric-authentication/       # Case Study 1
+│       ├── ai-semantic-search/             # Case Study 2
+│       └── mobile-release-platform/        # Case Study 3
+├── components/
+│   ├── navbar.tsx                          # Persistent navigation
+│   ├── footer.tsx                          # Persistent footer
+│   ├── theme-provider.tsx                  # Dark mode context
+│   ├── fade-in.tsx                         # Scroll-triggered animations
+│   ├── section-container.tsx               # Reusable section layout
+│   ├── metric-card.tsx                     # Key metric display
+│   ├── case-study-card.tsx                 # Case study preview card
+│   ├── case-study-layout.tsx               # Case study page components
+│   ├── writing-card.tsx                    # Article preview card
+│   ├── timeline.tsx                        # Experience timeline
+│   ├── cta-section.tsx                     # Call-to-action section
+│   └── skill-chip.tsx                      # Skill/tag chip
+```
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+### GitHub Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) that automatically builds and deploys to GitHub Pages on push to `main`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Push the repository to GitHub
+2. Go to Settings → Pages → Source → GitHub Actions
+3. The workflow will deploy automatically on push to `main`
 
-## Deploy on Vercel
+### Custom Domain
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To use a custom domain, add a `CNAME` file to the `public/` directory with your domain name.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Customization
+
+### Placeholder Content
+
+Search for `[TODO:` across the codebase to find all placeholder items that need real content:
+
+- Resume link
+- GitHub URL
+- LinkedIn URL
+- Email address
+- Screenshots and diagrams in case studies
+
+### Design System
+
+Colors, typography, and spacing are defined in `src/app/globals.css` using Tailwind CSS theme variables.
+
+## License
+
+Private — All rights reserved.
