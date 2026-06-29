@@ -23,20 +23,20 @@ export function CaseStudyCard({
   return (
     <FadeIn delay={delay} direction="up">
       <Link href={href} className="group block">
-        <article className="p-6 rounded-xl border border-border bg-surface/50 hover:border-accent/40 hover:bg-surface transition-all duration-200">
+        <article className="p-6 sm:p-8 rounded-2xl border border-border/80 bg-surface/40 hover:border-foreground/20 hover:bg-surface/70 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300 ease-out">
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
             <div className="flex-1 min-w-0">
-              <h3 className="text-lg font-semibold text-foreground group-hover:text-accent transition-colors">
+              <h3 className="text-xl font-bold text-foreground group-hover:text-accent transition-colors">
                 {title}
               </h3>
-              <p className="mt-2 text-sm text-muted leading-relaxed line-clamp-2">
+              <p className="mt-3 text-base text-muted leading-relaxed line-clamp-2">
                 {description}
               </p>
-              <div className="mt-4 flex flex-wrap gap-2">
+              <div className="mt-5 flex flex-wrap gap-2">
                 {tags.map((tag) => (
                   <span
                     key={tag}
-                    className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent"
+                    className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-foreground/6 text-foreground/70 dark:bg-foreground/10 dark:text-foreground/80"
                   >
                     {tag}
                   </span>
@@ -45,15 +45,15 @@ export function CaseStudyCard({
             </div>
             {metric && (
               <div className="shrink-0 text-right sm:pl-6">
-                <p className="text-2xl font-bold text-accent">{metric.value}</p>
+                <p className="text-3xl font-extrabold text-foreground">{metric.value}</p>
                 <p className="text-xs text-muted mt-1">{metric.label}</p>
               </div>
             )}
           </div>
-          <div className="mt-4 flex items-center text-sm text-accent font-medium">
+          <div className="mt-5 flex items-center text-sm text-accent font-semibold">
             Read case study
             <svg
-              className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform"
+              className="ml-1.5 w-4 h-4 group-hover:translate-x-1.5 transition-transform"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"

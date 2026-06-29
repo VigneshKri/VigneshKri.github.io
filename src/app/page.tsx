@@ -7,6 +7,8 @@ import { CaseStudyCard } from "@/components/case-study-card";
 import { WritingCard } from "@/components/writing-card";
 import { Timeline } from "@/components/timeline";
 import { CTASection } from "@/components/cta-section";
+import { SelectedWinsStrip } from "@/components/selected-wins-strip";
+import { HowIWorkProcess } from "@/components/how-i-work-process";
 import {
   SectionContainer,
   SectionHeader,
@@ -14,19 +16,19 @@ import {
 
 const metrics = [
   { value: "$2M", label: "Revenue Driven" },
-  { value: "900+", label: "Users Reached" },
+  { value: "1.5K+", label: "DAU Observed" },
   { value: "200+", label: "User Stories Shipped" },
   { value: "7", label: "Enterprise Customers" },
 ];
 
 const caseStudies = [
   {
-    title: "Biometric Authentication Rollout",
+    title: "Product Analytics Pipeline",
     description:
-      "Led full product discovery — identified login drop-off via Pendo funnel analysis, ran user surveys, wireframed UX in Figma, authored a PRD with MoSCoW-prioritized scope, and executed a controlled 5-customer GA rollout contributing to ~$2M in contract value.",
-    href: "/case-studies/biometric-authentication",
-    tags: ["Product Discovery", "Pendo", "MoSCoW", "Enterprise GA"],
-    metric: { value: "$2M", label: "Contract value influenced" },
+      "Turned fragmented telemetry into a decision system by integrating Pendo with Supabase and defining customer-risk rules that changed how Product, CS, and Engineering prioritized weekly actions.",
+    href: "/case-studies/product-analytics-pipeline",
+    tags: ["Pendo", "Supabase", "Analytics", "Customer Risk"],
+    metric: { value: "~18%", label: "At-risk cohort reduction (estimated)" },
   },
   {
     title: "Sprint Resource Planner",
@@ -75,7 +77,7 @@ const experience = [
     title: "Software Engineer I — Product Delivery Lead",
     subtitle: "Aurigo Software Technologies · Mobile Pod",
     description:
-      "Leading product delivery for a 6-engineer pod — driving discovery, roadmap prioritization, and controlled GA rollouts for 7 enterprise DOT customers serving 900+ users.",
+      "Contributed to product delivery in a 6-engineer pod — supporting discovery, roadmap prioritization, and controlled GA rollouts for 7 enterprise DOT customers serving 1.2K+ users.",
     period: "Dec 2025 – Present",
     current: true,
   },
@@ -83,7 +85,7 @@ const experience = [
     title: "Associate Software Engineer",
     subtitle: "Automation & Delivery, Mobile Pod",
     description:
-      "Evolved from IC automation into product delivery ownership. Redesigned CI/CD frameworks cutting deployment time 70%. Applied MoSCoW prioritization to backlog grooming and managed release-cadence stakeholder communications.",
+      "Worked as an IC developer across Delivery and DevOps, while also beginning to contribute to product management work. Redesigned CI/CD workflows that cut deployment time by 70%, supported backlog grooming with MoSCoW prioritization, and contributed to release planning, release activities, and stakeholder communication.",
     period: "Aug 2024 – Nov 2025",
   },
   {
@@ -99,32 +101,50 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-16 pb-12 md:pt-28 md:pb-20">
-        <div className="mx-auto max-w-5xl px-6 lg:px-8">
+      <section className="pt-20 pb-12 md:pt-32 md:pb-20">
+        <div className="relative mx-auto max-w-5xl px-6 lg:px-8">
           <FadeIn direction="up">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 text-accent text-xs font-semibold tracking-wide uppercase mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-              Technical Product Manager
-            </div>
+            <p className="text-sm font-medium text-muted mb-4">
+              Technical Product Manager · Bengaluru, India
+            </p>
           </FadeIn>
           <FadeIn delay={0.1} direction="up">
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl max-w-3xl leading-[1.1]">
-              Vignesh R Krishnan
+            <h1 className="text-5xl font-extrabold text-foreground sm:text-6xl lg:text-7xl max-w-4xl leading-[1.0] tracking-[-0.035em]">
+              Vignesh{" "}
+              <span className="text-accent">Krishnan</span>
             </h1>
           </FadeIn>
           <FadeIn delay={0.2} direction="up">
-            <p className="mt-6 text-lg md:text-xl text-muted max-w-2xl leading-relaxed">
-              Building AI-powered Enterprise SaaS Products through Product
-              Discovery, Analytics and Engineering Depth.
+            <p className="mt-6 sm:mt-8 text-lg sm:text-xl md:text-[1.4rem] text-muted max-w-2xl leading-[1.5] font-medium">
+              I build{" "}
+              <strong className="text-foreground font-bold">enterprise SaaS products</strong>{" "}
+              at the intersection of AI, analytics, and engineering depth —{" "}
+              <em className="italic">turning ambiguous signals into shipped outcomes.</em>
             </p>
           </FadeIn>
+          <FadeIn delay={0.25} direction="up">
+            <div className="mt-5 flex flex-wrap gap-2">
+              <span className="px-3 py-1.5 rounded-full bg-accent/10 text-accent text-xs font-semibold">
+                SaaS · Analytics
+              </span>
+              <span className="px-3 py-1.5 rounded-full bg-accent/10 text-accent text-xs font-semibold">
+                AI / LLM
+              </span>
+              <span className="px-3 py-1.5 rounded-full bg-accent/10 text-accent text-xs font-semibold">
+                B2B Software
+              </span>
+              <span className="px-3 py-1.5 rounded-full bg-accent/10 text-accent text-xs font-semibold">
+                DevOps
+              </span>
+            </div>
+          </FadeIn>
           <FadeIn delay={0.3} direction="up">
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 sm:mt-10 flex flex-wrap gap-4">
               <a
                 href="https://www.linkedin.com/in/vignesh-r-krishnan/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-accent rounded-lg hover:bg-accent/90 transition-colors shadow-sm"
+                className="inline-flex items-center justify-center gap-2 min-h-12 px-6 py-3 text-sm font-semibold text-white bg-accent rounded-full hover:bg-accent/85 transition-colors shadow-sm"
               >
                 LinkedIn
               </a>
@@ -132,20 +152,22 @@ export default function Home() {
                 href="https://github.com/VigneshKri"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-foreground border border-border rounded-lg hover:bg-surface hover:border-accent/40 transition-colors"
+                className="inline-flex items-center justify-center gap-2 min-h-12 px-6 py-3 text-sm font-semibold text-foreground border border-border rounded-full hover:bg-surface hover:border-foreground/30 transition-colors"
               >
                 GitHub
               </a>
               <a
                 href="mailto:vigneshrkrishnan5@gmail.com"
-                className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-foreground border border-border rounded-lg hover:bg-surface hover:border-accent/40 transition-colors"
+                className="inline-flex items-center justify-center gap-2 min-h-12 px-6 py-3 text-sm font-semibold text-foreground border border-border rounded-full hover:bg-surface hover:border-foreground/30 transition-colors"
               >
-                Email
+                Get in Touch
               </a>
             </div>
           </FadeIn>
         </div>
       </section>
+
+      <SelectedWinsStrip />
 
       {/* Metrics */}
       <section className="pb-16 md:pb-24">
@@ -246,6 +268,8 @@ export default function Home() {
         />
         <Timeline items={experience} />
       </SectionContainer>
+
+      <HowIWorkProcess />
 
       {/* CTA */}
       <div className="border-t border-border">

@@ -5,6 +5,10 @@ import {
   CaseStudySection,
   RelatedCaseStudies,
 } from "@/components/case-study-layout";
+import { ArtifactPreview } from "@/components/artifact-preview";
+import { CaseStudySnapshot } from "@/components/case-study-snapshot";
+import { CaseStudyImpactStrip } from "@/components/case-study-impact-strip";
+import { CaseStudyStickyRail } from "@/components/case-study-sticky-rail";
 
 export function SprintResourcePlannerContent() {
   return (
@@ -25,9 +29,35 @@ export function SprintResourcePlannerContent() {
           { value: "3 pods", label: "Org-wide adoption" },
           { value: "5+ PMs", label: "Active daily users" },
         ]}
+        visualHook={<CaseStudySnapshot variant="planning" />}
       />
 
-      <div className="mx-auto max-w-5xl px-6 lg:px-8 pb-20">
+      <div className="mx-auto max-w-6xl px-6 lg:px-8 pb-20 xl:grid xl:grid-cols-[minmax(0,1fr)_260px] xl:gap-8">
+        <div>
+          <CaseStudyImpactStrip
+            title="From Planning Friction To Capacity Clarity"
+            subtitle="A shift from manual board-hopping to a single planning control surface."
+            items={[
+              {
+                label: "Reallocation effort",
+                before: "Manual multi-board checks",
+                after: "Live assignment view",
+                delta: "60% effort reduction",
+              },
+              {
+                label: "Planning cycle",
+                before: "Late overload detection",
+                after: "Pre-sprint risk visibility",
+                delta: "Earlier mitigation",
+              },
+              {
+                label: "Operating scale",
+                before: "Pod-level visibility only",
+                after: "Cross-pod planning standard",
+                delta: "Adopted across 3 pods",
+              },
+            ]}
+          />
         <CaseStudySection title="Overview">
           <p>
             Sprint planning in large Azure DevOps organizations is broken.
@@ -41,7 +71,7 @@ export function SprintResourcePlannerContent() {
           </p>
         </CaseStudySection>
 
-        <CaseStudySection title="Problem">
+        <CaseStudySection id="problem-diagnosis" title="Problem">
           <p>
             PMs managing sprints in Azure DevOps had no single view of team
             capacity. To answer &ldquo;who has bandwidth?&rdquo; they had to
@@ -131,7 +161,7 @@ export function SprintResourcePlannerContent() {
           </ul>
         </CaseStudySection>
 
-        <CaseStudySection title="Solution Design">
+        <CaseStudySection id="solution-design" title="Solution Design">
           <p>
             I designed Sprint Resource Planner as a live capacity dashboard
             sitting on top of Azure DevOps, providing three views:
@@ -209,7 +239,7 @@ export function SprintResourcePlannerContent() {
           </ul>
         </CaseStudySection>
 
-        <CaseStudySection title="Architecture Decisions">
+        <CaseStudySection id="architecture-decisions" title="Architecture Decisions">
           <p>
             Built as a Flask API + vanilla frontend reading live from Azure
             DevOps REST API v7.1. Key architecture decisions:
@@ -291,7 +321,27 @@ export function SprintResourcePlannerContent() {
           </ol>
         </CaseStudySection>
 
-        <CaseStudySection title="Trade-offs">
+        <ArtifactPreview
+          heading="Artifact Preview"
+          artifacts={[
+            {
+              title: "Sprint Readiness Scoring Model",
+              detail: "Heuristic model used to expose pre-sprint risk before commitment",
+              snippet:
+                "Score = weighted capacity health + carry-over burden + unestimated backlog %. Thresholds: Green >80, Amber 60-79, Red <60.",
+              visual: "scorecard",
+            },
+            {
+              title: "Planning Board Interaction Spec",
+              detail: "PM-facing behavior spec for fast allocation and reassignment",
+              snippet:
+                "Drag work item between members -> optimistic UI update -> ADO write-back with rev check -> rollback state + toast on conflict.",
+              visual: "kanban",
+            },
+          ]}
+        />
+
+        <CaseStudySection id="trade-offs" title="Trade-offs">
           <ul className="list-disc pl-5 space-y-2">
             <li>
               Chose vanilla frontend over React/Next.js to minimize
@@ -314,7 +364,7 @@ export function SprintResourcePlannerContent() {
           </ul>
         </CaseStudySection>
 
-        <CaseStudySection title="Impact">
+        <CaseStudySection id="impact-and-lessons" title="Impact">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-2">
             <div className="p-4 rounded-lg border border-border text-center">
               <p className="text-xl font-bold text-accent">~$150K</p>
@@ -396,13 +446,30 @@ export function SprintResourcePlannerContent() {
         <RelatedCaseStudies
           studies={[
             {
-              title: "Biometric Authentication Rollout",
-              href: "/case-studies/biometric-authentication",
+              title: "Product Analytics Pipeline",
+              href: "/case-studies/product-analytics-pipeline",
             },
             {
               title: "AI-Powered PBI Search Tool",
               href: "/case-studies/ai-semantic-search",
             },
+          ]}
+        />
+        </div>
+
+        <CaseStudyStickyRail
+          title="Sprint Resource Planner"
+          metrics={[
+            { value: "~$150K", label: "Annual PM hours saved" },
+            { value: "60%", label: "Reallocation effort reduction" },
+            { value: "3 pods", label: "Org-wide adoption" },
+          ]}
+          checkpoints={[
+            { label: "Problem diagnosis", href: "#problem-diagnosis" },
+            { label: "Solution design", href: "#solution-design" },
+            { label: "Architecture decisions", href: "#architecture-decisions" },
+            { label: "Trade-offs", href: "#trade-offs" },
+            { label: "Impact and lessons", href: "#impact-and-lessons" },
           ]}
         />
       </div>

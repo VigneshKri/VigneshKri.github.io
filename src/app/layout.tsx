@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const spaceGrotesk = Space_Grotesk({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -54,9 +54,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.className} h-full`} suppressHydrationWarning>
+    <html lang="en" className={`${plusJakarta.className} h-full`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col bg-background text-foreground dark:bg-background dark:text-foreground antialiased">
         <ThemeProvider>
+          <div id="top" />
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />

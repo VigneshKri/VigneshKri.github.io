@@ -3,18 +3,34 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  --color-background: light-dark(#ffffff, #0c0f17);
-  --color-foreground: light-dark(#0f172a, #f1f5f9);
-  --color-muted: light-dark(#64748b, #94a3b8);
-  --color-accent: light-dark(#2383e2, #529cca);
-  --color-border: light-dark(#e2e8f0, #1e293b);
-  --color-surface: light-dark(#f8fafc, #131620);
-  --font-sans: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --color-background: light-dark(#f6f2ec, #1a1a1a);
+  --color-foreground: light-dark(#1a1a1a, #f5f0ea);
+  --color-muted: light-dark(#6b6560, #a89f96);
+  --color-accent: light-dark(#c45d3e, #e07a5a);
+  --color-border: light-dark(#e5ddd4, #2e2a26);
+  --color-surface: light-dark(#ede8e2, #222019);
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
   color-scheme: light;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  letter-spacing: -0.008em;
+  line-height: 1.65;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  font-weight: 800;
 }
 
 html.dark {
@@ -30,6 +46,6 @@ html.dark {
 }
 
 ::selection {
-  background-color: #2383e2;
+  background-color: #c45d3e;
   color: #ffffff;
 }

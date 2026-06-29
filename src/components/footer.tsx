@@ -14,8 +14,8 @@ export function Footer() {
       <div className="mx-auto max-w-5xl px-6 lg:px-8 py-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           <div>
-            <p className="text-sm font-semibold text-foreground">
-              Vignesh R Krishnan
+            <p className="text-sm font-bold text-foreground">
+              Vignesh Krishnan
             </p>
             <p className="text-sm text-muted mt-1">
               Technical Product Manager

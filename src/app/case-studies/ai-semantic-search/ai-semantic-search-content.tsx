@@ -5,6 +5,10 @@ import {
   CaseStudySection,
   RelatedCaseStudies,
 } from "@/components/case-study-layout";
+import { ArtifactPreview } from "@/components/artifact-preview";
+import { CaseStudySnapshot } from "@/components/case-study-snapshot";
+import { CaseStudyImpactStrip } from "@/components/case-study-impact-strip";
+import { CaseStudyStickyRail } from "@/components/case-study-sticky-rail";
 
 export function AISemanticSearchContent() {
   return (
@@ -25,9 +29,35 @@ export function AISemanticSearchContent() {
           { value: "LLM", label: "Guardrails enforced" },
           { value: "Prompt", label: "Accuracy evals run" },
         ]}
+        visualHook={<CaseStudySnapshot variant="ai" />}
       />
 
-      <div className="mx-auto max-w-5xl px-6 lg:px-8 pb-20">
+      <div className="mx-auto max-w-6xl px-6 lg:px-8 pb-20 xl:grid xl:grid-cols-[minmax(0,1fr)_260px] xl:gap-8">
+        <div>
+          <CaseStudyImpactStrip
+            title="From Keyword Search To Semantic Retrieval"
+            subtitle="Reduced planning friction by shifting from exact-match lookup to intent-aware discovery."
+            items={[
+              {
+                label: "Ticket lookup time",
+                before: "3-5 mins per query",
+                after: "Intent-based retrieval",
+                delta: "~70% time reduction",
+              },
+              {
+                label: "Search reliability",
+                before: "Keyword miss on intent",
+                after: "Vector + keyword hybrid",
+                delta: "Higher relevance",
+              },
+              {
+                label: "Safety posture",
+                before: "No LLM guardrails",
+                after: "Policy-enforced responses",
+                delta: "Enterprise-ready rollout",
+              },
+            ]}
+          />
         <CaseStudySection title="Overview">
           <p>
             During sprint review sessions, PMs and engineers spent significant
@@ -40,7 +70,7 @@ export function AISemanticSearchContent() {
           </p>
         </CaseStudySection>
 
-        <CaseStudySection title="Problem">
+        <CaseStudySection id="problem-sizing" title="Problem">
           <p>
             Azure DevOps&apos; built-in search was keyword-based. When PMs
             needed to find related PBIs during sprint planning or review, they
@@ -127,7 +157,7 @@ export function AISemanticSearchContent() {
           </ul>
         </CaseStudySection>
 
-        <CaseStudySection title="Options Considered">
+        <CaseStudySection id="options-considered" title="Options Considered">
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
@@ -186,7 +216,7 @@ export function AISemanticSearchContent() {
           </div>
         </CaseStudySection>
 
-        <CaseStudySection title="Decision Framework">
+        <CaseStudySection id="decision-framework" title="Decision Framework">
           <p>
             The decision prioritized three factors in order: data residency
             compliance, integration complexity with existing infrastructure,
@@ -227,7 +257,7 @@ export function AISemanticSearchContent() {
           </p>
         </CaseStudySection>
 
-        <CaseStudySection title="Execution">
+        <CaseStudySection id="execution" title="Execution">
           <p>
             I implemented the full solution — from data pipeline through
             inference and guardrails:
@@ -271,6 +301,26 @@ export function AISemanticSearchContent() {
           </ol>
         </CaseStudySection>
 
+        <ArtifactPreview
+          heading="Artifact Preview"
+          artifacts={[
+            {
+              title: "Prompt Safety Contract",
+              detail: "System-level guardrails used for response generation",
+              snippet:
+                "Reject non-work queries, block prompt-injection patterns, cite retrieved PBIs only, and return deterministic fallback when confidence < threshold.",
+              visual: "workflow",
+            },
+            {
+              title: "Retrieval Quality Evaluation Grid",
+              detail: "Regression suite for semantic relevance and latency",
+              snippet:
+                "100 benchmark queries scored for Precision@5, Recall@10, and hallucination rate; release gate required passing relevance and P95 latency targets.",
+              visual: "grid",
+            },
+          ]}
+        />
+
         <CaseStudySection title="Trade-offs">
           <ul className="list-disc pl-5 space-y-2">
             <li>
@@ -290,7 +340,7 @@ export function AISemanticSearchContent() {
           </ul>
         </CaseStudySection>
 
-        <CaseStudySection title="Impact">
+        <CaseStudySection id="impact-and-improvements" title="Impact">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-2">
             <div className="p-4 rounded-lg border border-border text-center">
               <p className="text-xl font-bold text-accent">~70%</p>
@@ -358,13 +408,30 @@ export function AISemanticSearchContent() {
         <RelatedCaseStudies
           studies={[
             {
-              title: "Biometric Authentication Rollout",
-              href: "/case-studies/biometric-authentication",
+              title: "Product Analytics Pipeline",
+              href: "/case-studies/product-analytics-pipeline",
             },
             {
               title: "Sprint Resource Planner",
               href: "/case-studies/sprint-resource-planner",
             },
+          ]}
+        />
+        </div>
+
+        <CaseStudyStickyRail
+          title="AI-Powered Search"
+          metrics={[
+            { value: "~70%", label: "Review time reduction" },
+            { value: "<500ms", label: "P95 latency" },
+            { value: "Guardrails", label: "LLM safety enforced" },
+          ]}
+          checkpoints={[
+            { label: "Problem sizing", href: "#problem-sizing" },
+            { label: "Options considered", href: "#options-considered" },
+            { label: "Decision framework", href: "#decision-framework" },
+            { label: "Execution", href: "#execution" },
+            { label: "Impact and improvements", href: "#impact-and-improvements" },
           ]}
         />
       </div>

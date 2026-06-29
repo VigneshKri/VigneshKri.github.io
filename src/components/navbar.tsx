@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { useTheme } from "./theme-provider";
 
 const navLinks = [
@@ -36,30 +37,53 @@ const externalLinks = [
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
   const { theme, toggleTheme } = useTheme();
 
+  const handleBrandClick = () => {
+    setIsOpen(false);
+
+    // If we're already on the home route, force-scroll to the first screen.
+    if (pathname === "/") {
+      window.history.replaceState(null, "", "/#top");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
-    <nav className="sticky top-0 z-50 border-b border-border/60 bg-background/90 backdrop-blur-xl">
+    <nav className="sticky top-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-xl">
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link
-            href="/"
-            className="text-lg font-semibold text-foreground tracking-tight hover:text-accent transition-colors"
+            href="/#top"
+            onClick={handleBrandClick}
+            className="text-base font-bold text-foreground tracking-tight hover:text-accent transition-colors"
+            aria-label="Go to home top"
           >
-            VRK
+            Vignesh Krishnan
           </Link>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+            {navLinks.map((link) => {
+              const isActive =
+                link.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(link.href);
+              return (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-muted hover:text-foreground transition-colors"
+                className={`text-sm font-medium transition-colors relative ${
+                  isActive
+                    ? "text-foreground after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-0.5 after:bg-accent after:rounded-full"
+                    : "text-muted hover:text-foreground"
+                }`}
               >
                 {link.label}
               </Link>
-            ))}
+              );
+            })}
             <div className="flex items-center gap-3 ml-4 pl-4 border-l border-border">
               {externalLinks.map((link) => (
                 <a

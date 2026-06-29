@@ -40,20 +40,21 @@ const contactChannels = [
 
 export function ContactContent() {
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-24 md:py-32">
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <FadeIn direction="up">
-          <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-accent mb-4">
             Contact
           </p>
         </FadeIn>
         <FadeIn delay={0.1} direction="up">
-          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl max-w-2xl">
-            Let&apos;s build products together
+          <h1 className="text-4xl font-extrabold tracking-[-0.03em] text-foreground sm:text-5xl max-w-3xl leading-[1.08]">
+            Have a question or{" "}
+            <em className="italic">just want to talk?</em>
           </h1>
         </FadeIn>
         <FadeIn delay={0.2} direction="up">
-          <p className="mt-4 text-lg text-muted max-w-2xl leading-relaxed">
+          <p className="mt-5 text-lg text-muted max-w-2xl leading-[1.55] font-medium">
             Open to connecting with teams shipping enterprise software, AI
             products, or developer platforms. Always happy to talk product.
           </p>

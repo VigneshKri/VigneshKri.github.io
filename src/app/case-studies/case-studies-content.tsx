@@ -5,12 +5,12 @@ import { CaseStudyCard } from "@/components/case-study-card";
 
 const caseStudies = [
   {
-    title: "Biometric Authentication Rollout",
+    title: "Product Analytics Pipeline",
     description:
-      "Led full product discovery — identified login drop-off via Pendo funnel analysis, ran user surveys, wireframed UX in Figma, authored a PRD with MoSCoW-prioritized scope, and executed a controlled 5-customer GA rollout contributing to ~$2M in contract value.",
-    href: "/case-studies/biometric-authentication",
-    tags: ["Product Discovery", "Pendo", "MoSCoW", "Enterprise GA"],
-    metric: { value: "$2M", label: "Contract value influenced" },
+      "Reframed analytics from reporting to operations by integrating Pendo with Supabase, defining product-health rules, and creating an account-level risk workflow used for weekly cross-functional decisions.",
+    href: "/case-studies/product-analytics-pipeline",
+    tags: ["Pendo", "Supabase", "Product Analytics", "Dashboard"],
+    metric: { value: "~18%", label: "At-risk cohort reduction (estimated)" },
   },
   {
     title: "Sprint Resource Planner",
@@ -32,28 +32,25 @@ const caseStudies = [
 
 export function CaseStudiesContent() {
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-24 md:py-32">
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <FadeIn direction="up">
-          <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-accent mb-4">
             Case Studies
           </p>
         </FadeIn>
         <FadeIn delay={0.1} direction="up">
-          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl max-w-2xl">
-            Product work that drove business outcomes
+          <h1 className="text-4xl font-extrabold tracking-[-0.03em] text-foreground sm:text-5xl max-w-3xl leading-[1.08]">
+            Work I'm <em className="italic">proud of.</em>
           </h1>
         </FadeIn>
         <FadeIn delay={0.2} direction="up">
-          <p className="mt-4 text-lg text-muted max-w-2xl leading-relaxed">
-            Each case study documents the full product lifecycle — from
-            discovery and user research through trade-offs, execution, and
-            measurable impact. These are product decision records, not project
-            showcases.
+          <p className="mt-5 text-lg text-muted max-w-2xl leading-[1.55] font-medium">
+            Real problems. Real users. Real outcomes.
           </p>
         </FadeIn>
 
-        <div className="mt-12 space-y-4">
+        <div className="mt-14 space-y-5">
           {caseStudies.map((study, i) => (
             <CaseStudyCard key={study.href} {...study} delay={i * 0.1} />
           ))}

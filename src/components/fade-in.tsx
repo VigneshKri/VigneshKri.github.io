@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   motion,
   useInView,
@@ -16,10 +16,10 @@ interface FadeInProps {
 }
 
 const directionOffset: Record<string, { x: number; y: number }> = {
-  up: { x: 0, y: 24 },
-  down: { x: 0, y: -24 },
-  left: { x: 24, y: 0 },
-  right: { x: -24, y: 0 },
+  up: { x: 0, y: 18 },
+  down: { x: 0, y: -18 },
+  left: { x: 18, y: 0 },
+  right: { x: -18, y: 0 },
   none: { x: 0, y: 0 },
 };
 
@@ -32,8 +32,22 @@ export function FadeIn({
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
   const controls = useAnimation();
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   const offset = directionOffset[direction];
+  const motionScale = isSmallScreen ? 0.65 : 1;
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const update = () => setIsSmallScreen(mediaQuery.matches);
+
+    update();
+    mediaQuery.addEventListener("change", update);
+
+    return () => {
+      mediaQuery.removeEventListener("change", update);
+    };
+  }, []);
 
   useEffect(() => {
     if (isInView) {
@@ -43,8 +57,8 @@ export function FadeIn({
 
   const hidden: Variant = {
     opacity: 0,
-    x: offset.x,
-    y: offset.y,
+    x: offset.x * motionScale,
+    y: offset.y * motionScale,
   };
 
   const visible: Variant = {
@@ -52,7 +66,7 @@ export function FadeIn({
     x: 0,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: isSmallScreen ? 0.42 : 0.5,
       delay,
       ease: [0.21, 0.47, 0.32, 0.98],
     },
@@ -61,7 +75,7 @@ export function FadeIn({
   return (
     <motion.div
       ref={ref}
-      initial="hidden"
+      initial={false}
       animate={controls}
       variants={{ hidden, visible }}
       className={className}
