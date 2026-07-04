@@ -92,7 +92,7 @@ export function AboutContent() {
                 be the person deciding <em>what</em> gets built, not just <em>how</em>.
                 Since then, I&apos;ve proposed and shipped AI-powered tools, architected
                 analytics infrastructure, and contributed to delivery for enterprise
-                customers serving 1.2K+ users.
+                customers serving 900+ users.
               </p>
               <p>
                 At the core, I care about two things: deeply understanding what
@@ -109,7 +109,7 @@ export function AboutContent() {
               {[
                 { value: "2+", label: "Years in Product & Delivery", sub: "Enterprise B2B SaaS at Aurigo" },
                 { value: "~70%", label: "Sprint review time cut", sub: "AI-powered search tool" },
-                { value: "1.2K+", label: "Enterprise users served", sub: "7 DOT customer accounts" },
+                { value: "900+", label: "Enterprise users served", sub: "7 DOT customer accounts" },
                 { value: "~$150K", label: "Annual PM hours saved", sub: "Sprint Resource Planner" },
               ].map((stat) => (
                 <div key={stat.label} className="p-4 rounded-xl border border-border/80 bg-surface/50">
@@ -199,7 +199,7 @@ export function AboutContent() {
               </h3>
               <p className="text-sm text-muted leading-relaxed">
                 Contributed to product delivery for an enterprise mobile
-                platform serving 7 DOT customers and 1.2K+ users — supporting
+                platform serving 7 DOT customers and 900+ users — supporting
                 prioritization and 2-quarter roadmap scoping, sprint planning,
                 UAT-based go/no-go decisions, and stable production releases.
               </p>

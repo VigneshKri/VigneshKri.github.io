@@ -15,9 +15,9 @@ import {
 } from "@/components/section-container";
 
 const metrics = [
-  { value: "$2M", label: "Revenue Driven" },
-  { value: "1.5K+", label: "DAU Observed" },
-  { value: "200+", label: "User Stories Shipped" },
+  { value: "$2M+", label: "Contract Value Supported" },
+  { value: "1.5K+", label: "DAU Monitored", context: "Daily actives via Pendo · separate from 900+ cumulative release reach" },
+  { value: "95%", label: "Cycle Time Cut", context: "Mobile release cycle, 1 day → 30 min" },
   { value: "7", label: "Enterprise Customers" },
 ];
 
@@ -77,7 +77,7 @@ const experience = [
     title: "Software Engineer I — Product Delivery Lead",
     subtitle: "Aurigo Software Technologies · Mobile Pod",
     description:
-      "Contributed to product delivery in a 6-engineer pod — supporting discovery, roadmap prioritization, and controlled GA rollouts for 7 enterprise DOT customers serving 1.2K+ users.",
+      "Acting Product Owner for a 6-engineer mobile pod (2 QE, 4 Dev) — owning discovery, roadmap, prioritization, and GA releases for 7 enterprise DOT customers serving 900+ users.",
     period: "Dec 2025 – Present",
     current: true,
   },

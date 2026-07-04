@@ -25,7 +25,7 @@ export function SprintResourcePlannerContent() {
         ]}
         metrics={[
           { value: "~$150K", label: "Annual PM hours saved" },
-          { value: "60%", label: "Reallocation effort reduced" },
+          { value: "~60%", label: "Reallocation effort reduced" },
           { value: "3 pods", label: "Org-wide adoption" },
           { value: "5+ PMs", label: "Active daily users" },
         ]}
@@ -42,7 +42,7 @@ export function SprintResourcePlannerContent() {
                 label: "Reallocation effort",
                 before: "Manual multi-board checks",
                 after: "Live assignment view",
-                delta: "60% effort reduction",
+                delta: "~60% effort reduction",
               },
               {
                 label: "Planning cycle",
@@ -373,7 +373,7 @@ export function SprintResourcePlannerContent() {
               </p>
             </div>
             <div className="p-4 rounded-lg border border-border text-center">
-              <p className="text-xl font-bold text-accent">60%</p>
+              <p className="text-xl font-bold text-accent">~60%</p>
               <p className="text-xs text-muted mt-1">
                 Reallocation effort reduced
               </p>
@@ -393,10 +393,10 @@ export function SprintResourcePlannerContent() {
           </div>
           <p className="mt-4">
             By eliminating ~2 hours/week of manual capacity calculation per PM
-            across 5+ PMs and 3 pods, the tool saves approximately $150K
-            annually in PM productivity — time now redirected toward discovery,
-            customer research, and strategic prioritization instead of
-            spreadsheet gymnastics.
+            across 5+ PMs per pod and 3 pods (~15 active planning users total),
+            the tool saves approximately $150K annually in PM productivity —
+            time now redirected toward discovery, customer research, and
+            strategic prioritization instead of spreadsheet gymnastics.
           </p>
         </CaseStudySection>
 
@@ -461,7 +461,7 @@ export function SprintResourcePlannerContent() {
           title="Sprint Resource Planner"
           metrics={[
             { value: "~$150K", label: "Annual PM hours saved" },
-            { value: "60%", label: "Reallocation effort reduction" },
+            { value: "~60%", label: "Reallocation effort reduction" },
             { value: "3 pods", label: "Org-wide adoption" },
           ]}
           checkpoints={[
