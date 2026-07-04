@@ -14,9 +14,9 @@ const wins = [
     context: "AI-powered semantic PBI search tool",
   },
   {
-    value: "~$150K",
-    label: "Annual PM hours saved",
-    context: "Sprint Resource Planner adopted across 3 pods",
+    value: "~90%",
+    label: "Planning time reduced",
+    context: "10 hrs → under 1 hr/week · Sprint Resource Planner across 3 pods",
   },
 ];
 

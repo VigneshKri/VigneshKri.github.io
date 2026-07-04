@@ -110,7 +110,7 @@ export function AboutContent() {
                 { value: "2+", label: "Years in Product & Delivery", sub: "Enterprise B2B SaaS at Aurigo" },
                 { value: "~70%", label: "Sprint review time cut", sub: "AI-powered search tool" },
                 { value: "900+", label: "Enterprise users served", sub: "7 DOT customer accounts" },
-                { value: "~$150K", label: "Annual PM hours saved", sub: "Sprint Resource Planner" },
+                { value: "~90%", label: "Planning time reduced", sub: "Sprint Resource Planner" },
               ].map((stat) => (
                 <div key={stat.label} className="p-4 rounded-xl border border-border/80 bg-surface/50">
                   <p className="text-2xl font-extrabold text-foreground tracking-tight">{stat.value}</p>

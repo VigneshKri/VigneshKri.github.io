@@ -18,7 +18,7 @@ const caseStudies = [
       "Conceived and owned an internal sprint planning tool after identifying fragmented capacity visibility across Azure DevOps — became the single source of truth for workload allocation, carry-over tracking, and sprint readiness scoring across 3 pods.",
     href: "/case-studies/sprint-resource-planner",
     tags: ["Internal Product", "Azure DevOps", "Capacity Planning", "Org-wide"],
-    metric: { value: "~$150K", label: "Annual PM hours saved" },
+    metric: { value: "~90%", label: "Planning time reduced" },
   },
   {
     title: "AI-Powered PBI Search Tool",

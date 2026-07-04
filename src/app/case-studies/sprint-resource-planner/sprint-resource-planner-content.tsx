@@ -24,7 +24,7 @@ export function SprintResourcePlannerContent() {
           "Flask + Python",
         ]}
         metrics={[
-          { value: "~$150K", label: "Annual PM hours saved" },
+          { value: "~90%", label: "Planning time reduced" },
           { value: "~60%", label: "Reallocation effort reduced" },
           { value: "3 pods", label: "Org-wide adoption" },
           { value: "5+ PMs", label: "Active daily users" },
@@ -367,9 +367,9 @@ export function SprintResourcePlannerContent() {
         <CaseStudySection id="impact-and-lessons" title="Impact">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-2">
             <div className="p-4 rounded-lg border border-border text-center">
-              <p className="text-xl font-bold text-accent">~$150K</p>
+              <p className="text-xl font-bold text-accent">~90%</p>
               <p className="text-xs text-muted mt-1">
-                Annual PM hours saved
+                Planning time reduced
               </p>
             </div>
             <div className="p-4 rounded-lg border border-border text-center">
@@ -392,11 +392,12 @@ export function SprintResourcePlannerContent() {
             </div>
           </div>
           <p className="mt-4">
-            By eliminating ~2 hours/week of manual capacity calculation per PM
-            across 5+ PMs per pod and 3 pods (~15 active planning users total),
-            the tool saves approximately $150K annually in PM productivity —
-            time now redirected toward discovery, customer research, and
-            strategic prioritization instead of spreadsheet gymnastics.
+            Cut weekly task-planning and release-activity time for EMs and PMs
+            across 3 pods from 10 hours to under 1 hour — a ~90% reduction —
+            becoming the pod&apos;s single source of truth for workload
+            allocation and sprint readiness. Time previously spent on manual
+            board-hopping was redirected toward discovery, customer research,
+            and sprint prioritization.
           </p>
         </CaseStudySection>
 
@@ -460,7 +461,7 @@ export function SprintResourcePlannerContent() {
         <CaseStudyStickyRail
           title="Sprint Resource Planner"
           metrics={[
-            { value: "~$150K", label: "Annual PM hours saved" },
+            { value: "~90%", label: "Planning time reduced" },
             { value: "~60%", label: "Reallocation effort reduction" },
             { value: "3 pods", label: "Org-wide adoption" },
           ]}
