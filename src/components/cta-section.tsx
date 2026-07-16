@@ -13,9 +13,9 @@ export function CTASection() {
               Let&apos;s build products together
             </h2>
             <p className="mt-4 text-muted max-w-xl mx-auto">
-              I&apos;m exploring Technical Product Manager roles at companies
-              building enterprise-grade software, AI products, or developer
-              platforms.
+              If you&apos;re building enterprise software, AI systems, or
+              developer tools and need someone who can own the product
+              end-to-end — let&apos;s talk.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link

@@ -4,7 +4,7 @@ import { ContactContent } from "./contact-content";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch — I'm exploring Technical Product Manager roles at companies building enterprise-grade software, AI products, or developer platforms.",
+    "Get in touch — Technical Product Engineer building enterprise software, AI systems, and developer tools.",
 };
 
 export default function ContactPage() {
