@@ -18,7 +18,7 @@ export function Footer() {
               Vignesh Krishnan
             </p>
             <p className="text-sm text-muted mt-1">
-              Technical Product Engineer - Product Delivery &amp; AI Systems
+              Product Engineer - Product Delivery &amp; AI Systems
             </p>
           </div>
           <nav className="flex flex-wrap gap-6" aria-label="Footer navigation">

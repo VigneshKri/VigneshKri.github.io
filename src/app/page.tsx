@@ -105,7 +105,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-5xl px-6 lg:px-8">
           <FadeIn direction="up">
             <p className="text-sm font-medium text-muted mb-4">
-              Technical Product Engineer - Product Delivery &amp; AI Systems
+              Product Engineer - Product Delivery &amp; AI Systems
             </p>
           </FadeIn>
           <FadeIn delay={0.1} direction="up">
